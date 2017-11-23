@@ -312,3 +312,15 @@ function formatRemainTime(endTime) {
     return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
 }
 ```
+## 从url获取params
+```javascript
+/**
+ *
+ * @desc 从url获取params
+ * @params key 需要获取的key值
+ * @return String
+ */
+export const getQueryStringValue = (key) => {
+  return decodeURIComponent(location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"))
+}
+```
