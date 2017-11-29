@@ -88,11 +88,7 @@ html {
 a[href^="http"]:empty::before {
 	content: attr(href);
 }
-```
-```css
 /* 检测鼠标双击 */
-```
-```html
 /* HTML：*/
 
 <div class="test3">
@@ -102,9 +98,6 @@ a[href^="http"]:empty::before {
   <a href="http://renpingjun.com">Double click me</a></span>
 
 </div>
-```
-```css
-
 /*CSS：*/
 .test3 span {
 	position: relative;
