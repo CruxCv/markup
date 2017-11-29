@@ -223,4 +223,22 @@ h2[data-text]::after {
 	color: transparent;
 	text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
+
+/* 多行文本省略打点 */
+.text {
+	/*height: 60px;*/
+	width: 50px;
+	display: -webkit-box;
+	display: -moz-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:3;
+}
+
+/* 文本保留回车换行和空格 */
+.text {
+	white-space:pre-wrap;
+}
 ```
