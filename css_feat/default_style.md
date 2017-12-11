@@ -242,3 +242,16 @@ h2[data-text]::after {
 	white-space:pre-wrap;
 }
 ```
+```
+/* 仿table */
+inline-table：显示成前后没有换行的表格
+table：对应<table>标签，以表格方式显示。
+table-row：对应<tr>标签。
+table-row-group：对应<tbody>标签。
+table-cell：对应<td>标签。
+table-caption：对应<caption>标签。
+table-column：对应<col>标签。
+table-column-group：对应<colgroup>标签。
+table-header-group：对应<theader>标签。
+table-footer-group：对应<tfooter>标签。
+```
