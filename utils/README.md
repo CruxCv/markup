@@ -323,4 +323,9 @@ function formatRemainTime(endTime) {
 export const getQueryStringValue = (key) => {
   return decodeURIComponent(location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"))
 }
+
+export const getURLParameters = () =>
+  location.href.match(/([^?=&]+)(=([^&]*))/g).reduce(
+    (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
+  );
 ```
