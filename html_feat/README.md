@@ -48,7 +48,7 @@
 <link rel="prefetch" href="/fonts/icons.woff2">
 ```
 ### 渲染偏好
-对于国内各种双核浏览器，通过设置 renderer 头要求它们使用 webkit 内核；对于 IE 浏览器，通过设置 IE=edge 要求它使用最新的版本；对于百度搜索强制转码的流氓做法，通过 no-transform 禁止其自动转码；指示浏览器对类似电话、邮箱或地址的内容不要自作聪明的瞎识别（移动端）。
+对于国内各种双核浏览器，通过设置`renderer`头要求它们使用`webkit`内核；对于`IE`浏览器，通过设置`IE=edge`要求它使用最新的版本；对于百度搜索强制转码的流氓做法，通过`no-transform`禁止其自动转码；指示浏览器对类似电话、邮箱或地址的内容不要自作聪明的瞎识别（移动端）。
 ```html
 <meta name="renderer" content="webkit"> <!-- 用在360中 -->
 <meta name="force-rendering" content="webkit"> <!-- 用在其它 -->
@@ -57,7 +57,7 @@
 <meta name="format-detection" content="telephone=no,email=no,adress=no">
 ```
 ### 文档信息
-HTML 文档的一些元数据，包括：作者、描述、关键词和生成工具；设置 robots 为 index,follow 指示搜索引擎爬虫该页面需要进入索引，并且页面内的所有链接都要继续跟踪；设置 referrer 为 origin-when-cross-origin 指示浏览器在进行跨域跳转时，其 referrer 值将统一为域名，而非具体的 URL 地址。
+HTML 文档的一些元数据，包括：作者、描述、关键词和生成工具；设置`robots`为`index,follow`指示搜索引擎爬虫该页面需要进入索引，并且页面内的所有链接都要继续跟踪；设置`referrer`为`origin-when-cross-origin`指示浏览器在进行跨域跳转时，其`referrer`值将统一为域名，而非具体的`URL`地址。
 ```html
 <meta name="author" content="米老朱">
 <meta name="description" content="米老朱的个人博客">
@@ -67,7 +67,7 @@ HTML 文档的一些元数据，包括：作者、描述、关键词和生成工
 <meta name="referrer" content="origin-when-cross-origin">
 ```
 ### Icons
-虽说所有浏览器都还支持过时的 favicon.ico 格式，但在 HTML5 时代，我们应该使用更好的 PNG icon with sizes 方案。同时为了兼容老旧浏览器，我们可以将生成好的 favicon.ico 文件放在网站的根目录下面，通常浏览器会自动请求并加载它，并不需要额外通过 link 标签引入。
+虽说所有浏览器都还支持过时的`favicon.ico`格式，但在`HTML5`时代，我们应该使用更好的`PNG icon with sizes`方案。同时为了兼容老旧浏览器，我们可以将生成好的`favicon.ico`文件放在网站的根目录下面，通常浏览器会自动请求并加载它，并不需要额外通过`link`标签引入。
 ```html
 <meta name="theme-color" content="#db5945"> <!-- 主题颜色 -->
 <meta name="application-name" content="米老朱的博客"> <!-- 应用名称 -->
@@ -90,7 +90,7 @@ HTML 文档的一些元数据，包括：作者、描述、关键词和生成工
 <link rel="apple-touch-icon" href="/img/logo-167.png" sizes="167x167"> <!-- iPad Pro -->
 <link rel="mask-icon" href="/img/logo.svg" color="green"> <!-- Safari Pinned Tab Icon -->
 ```
-微软为了让 Metro UI 更好看，引入了 browserconfig.xml 文件，主要用于定制网站固定磁铁的图标和背景颜色，其格式如下所示：
+微软为了让`Metro UI`更好看，引入了`browserconfig.xml`文件，主要用于定制网站固定磁铁的图标和背景颜色，其格式如下所示：
 ```html
 <?xml version="1.0" encoding="utf-8"?>
 <browserconfig>
@@ -106,13 +106,14 @@ HTML 文档的一些元数据，包括：作者、描述、关键词和生成工
    </msapplication>
 </browserconfig>
 ```
-favicon.ico 实际上是一个图片容器，里面至少应该包含 16x16，32x32，48x48 三个尺寸的 png 图片，我们可以使用 ImageMagick 工具在本地直接生成（生成之前需要对 png 图片进行压缩以减小尺寸）。
-
+`favicon.ico`实际上是一个图片容器，里面至少应该包含`16x16，32x32，48x48`三个尺寸的`png`图片，我们可以使用`ImageMagick`工具在本地直接生成（生成之前需要对`png`图片进行压缩以减小尺寸）。
+```bash
 $ convert favicon-16.png favicon-32.png favicon-64.png favicon.ico
-注意：apple-mobile-web-app-status-bar-style 值默认状态栏为白色，可设置为 black（黑色） 或者 black-translucent（灰色半透明）；mask-icon 引入的 svg 文件必须只有一个图层，并且 viewBox 属性应该为 “0 0 16 16”。
+```
+注意：`apple-mobile-web-app-status-bar-style`值默认状态栏为白色，可设置为`black（黑色）`或者`black-translucent`（灰色半透明）；`mask-icon`引入的`svg`文件必须只有一个图层，并且`viewBox`属性应该为`“0 0 16 16”`。
 
-Twitter Cards
-Twitter 卡片用于将网站内容以更加优雅漂亮的方式分享到 twitter.com 网站，从形式上说，分为：summary, summary_large_image, app, player 四种形式，通常我们的站点只需要 summary 这种形式。
+### Twitter Cards
+`Twitter`卡片用于将网站内容以更加优雅漂亮的方式分享到`twitter.com`网站，从形式上说，分为：`summary, summary_large_image, app, player`四种形式，通常我们的站点只需要`summary`这种形式。
 ```html
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@melaozhu">
@@ -120,10 +121,10 @@ Twitter 卡片用于将网站内容以更加优雅漂亮的方式分享到 twitt
 <meta name="twitter:description" content="此处为分享描述">
 <meta name="twitter:image" content="此处为分享配图">
 ```
-配置上线后，你可以通过这个 Card validator 工具检查是否正确显示。
+配置上线后，你可以通过这个`Card validator`工具检查是否正确显示。
 
 ### Facebook Open Graph
-Open Graph 是一套开放的网页标注协议，通过 meta 标签标注网页的类型，主要由 Facebook 推动，已经成为社交分享领域的事实标准。如果你希望明确告诉社交网络或搜索引擎你的网页类型，你应该添加这些 meta 标签。
+`Open Graph`是一套开放的网页标注协议，通过`meta`标签标注网页的类型，主要由`Facebook`推动，已经成为社交分享领域的事实标准。如果你希望明确告诉社交网络或搜索引擎你的网页类型，你应该添加这些`meta`标签。
 ```html
 <meta property="og:type" content="article">
 <meta property="og:title" content="此处为分享标题">
@@ -132,24 +133,24 @@ Open Graph 是一套开放的网页标注协议，通过 meta 标签标注网页
 <meta property="og:url" content="此处为分享的链接地址">
 ```
 固定链接
-对于一份文档存在多个 URL 的情况，通过 rel="canonical" 指定唯一的固定链接。
+对于一份文档存在多个`URL`的情况，通过`rel="canonical"`指定唯一的固定链接。
 ```html
 <link rel="canonical" href="https://laozhu.me/">
 ```
 ### RSS 链接
-对于支持 RSS 订阅的页面，可针对 RSS 阅读器提供可订阅的源文件。
+对于支持`RSS`订阅的页面，可针对`RSS`阅读器提供可订阅的源文件。
 ```html
 <link rel="alternative" href="/index.xml" title="米老朱的博客" type="application/atom+xml">
 ```
 ### Polyfill
-可以专门为老旧的 IE 浏览器引入 Polyfill 方案，举个例子，为了让 IE6-IE8 浏览器能够使用 HTML5 标签和 Media Query 特性，我们需要引入 html5shiv 和 response.js 这两个库。
+可以专门为老旧的`IE`浏览器引入`Polyfill`方案，举个例子，为了让`IE6-IE8`浏览器能够使用`HTML5`标签和`Media Query`特性，我们需要引入`html5shiv`和`response.js`这两个库。
 ```html
 <!--[if lt IE 9]>
 <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 ```
-其他的 Polyfill 方案写法类似。
+其他的`Polyfill`方案写法类似。
 
 ### 打印样式表
 对于可打印的页面（如文章页面），可提供针对打印机的样式表，使得网站用户可以将文章打印下来阅读。
@@ -157,7 +158,7 @@ Open Graph 是一套开放的网页标注协议，通过 meta 标签标注网页
 <link rel="stylesheet" href="/css/print.css" media="print">
 ```
 ### 交替样式表
-定义交替样式表的时候，指定其 title 属性，以方便用户在浏览器中根据名称选择替代样式，交替样式表多用于多主题切换的站点。
+定义交替样式表的时候，指定其`title`属性，以方便用户在浏览器中根据名称选择替代样式，交替样式表多用于多主题切换的站点。
 ```html
 <link href="default.css" rel="stylesheet">
 <link href="high-contrast.css" rel="alternate stylesheet" title="High contrast">
