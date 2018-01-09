@@ -23,5 +23,26 @@ $(window).on("scroll touchmove", function () {
   if ($(document).scrollTop() >= $("#five").position().top) {
     $('body').css('background', $("#five").attr("data-color"))
   };
+  if ($(document).scrollTop() >= $("#six").position().top) {
+    $('body').css('background', $("#six").attr("data-color"))
+  };
+  if ($(document).scrollTop() >= $("#seven").position().top) {
+    $('body').css('background', $("#seven").attr("data-color"))
+  };
+  if ($(document).scrollTop() >= $("#eight").position().top) {
+    $('body').css('background', $("#eight").attr("data-color"))
+  };
+  if ($(document).scrollTop() >= $("#nine").position().top) {
+    $('body').css('background', $("#nine").attr("data-color"))
+  };
+  if ($(document).scrollTop() >= $("#ten").position().top) {
+    $('body').css('background', $("#ten").attr("data-color"))
+  };
+  if ($(document).scrollTop() >= $("#eleven").position().top) {
+    $('body').css('background', $("#eleven").attr("data-color"))
+  };
+  if ($(document).scrollTop() >= $("#twelve").position().top) {
+    $('body').css('background', $("#twelve").attr("data-color"))
+  };
 });
 jackHarnerSig("light")
