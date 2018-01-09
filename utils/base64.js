@@ -1,4 +1,4 @@
-function Base64() {
+const Base64 = function() {
 
   // private property
   _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -103,14 +103,14 @@ function Base64() {
 }
 
 
-function b64DecodeUnicode(str) {
+const b64DecodeUnicode = function(str) {
   // Going backwards: from bytestream, to percent-encoding, to original string.
   return decodeURIComponent(atob(str).split('').map(function (c) {
     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
   }).join(''));
 }
 
-function b64EncodeUnicode(str) {
+const b64EncodeUnicode = function(str) {
   // first we use encodeURIComponent to get percent-encoded UTF-8,
   // then we convert the percent encodings into raw bytes which
   // can be fed into btoa.
