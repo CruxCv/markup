@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=750,minimum-scale=0.5,maximum-scale=0.5,initial-scale=0.5,user-scalable=no,viewport-fit=cover"
+/>
   <title>CrazyVirusss</title>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
   <link rel="stylesheet" href="./index.css">
   <script src="./index.js"></script>
@@ -105,6 +106,18 @@
     <div class="clear"></div>
   </article>
 </body>
+<script type="text/javascript">
+  /**
+   * 一段动态的viewport meta设置，以750像素为基础宽度，动态全局缩放适配不同宽度的浏览器屏幕
+   */
+  var useScaledViewportMeta = function () {
+    var phoneWidth = parseInt(window.screen.width);
+    var phoneScale = phoneWidth / 750;
+    document.write('<meta name="viewport" content="width=750, user-scalable=no, minimum-scale=' + phoneScale +
+      ',maximum-scale=' + phoneScale + '">');
+  }
+  useScaledViewportMeta()
+</script>
 </html>
 
 
