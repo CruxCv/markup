@@ -33,12 +33,12 @@ body {
 ```html
 <body>
   <div id="example-1">
-    <p>难臺子哥式自不家草要计在来也见加正活书。</p>
+    <p>埃米纳姆</p>
   </div>
   <article id="example-2">
-    <h1>意家的不称打准无政！</h1>
-    <p>得研河金起里美希孩有人裡人。料低不。</p>
-    <button>处拉</button>
+    <h1>你没有资格议论我</h1>
+    <p>因为你根本不知道我经历了什么</p>
+    <button>fuck！</button>
   </article>
 </body>
 ```
