@@ -351,3 +351,29 @@ function b64EncodeUnicode(str) {
 }
 
 ```
+
+## 滚动到顶部
+```javascript
+const scrollToTop = _ => {
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
+};
+```
+
+## URL参数
+```javascript
+/*
+ * return { key: value, ... }
+ **/
+const getUrlParameters = url =>
+
+  url.match(/([^?=&]+)(=([^&]*))/g).reduce(
+
+    (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
+
+  );
+```
