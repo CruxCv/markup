@@ -88,6 +88,10 @@ function isEmptyObject(obj) {
 function randomNum(min, max) {
     return Math.floor(min + Math.random() * (max - min));
 }
+
+function randomNum(min, ,max) {
+    return ~~(Math.random() * (max - min + 1)) + min
+}
 ```
 ## 获取浏览器类型和版本
 ```javascript
