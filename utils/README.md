@@ -381,3 +381,11 @@ const getUrlParameters = url =>
 
   );
 ```
+## 生成指定范围数字数组
+```javascript
+/*
+ * @param start,end
+ * eg: range(1,3) => [1, 2]
+ **/
+const range = (start, end) => new Array(end - start).fill(start).map((el, i) => start + i);
+```
