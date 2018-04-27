@@ -1,7 +1,24 @@
 /**
  * 无依赖图片预览
  * 
+ * Usage
+ * 需要在componentWillReceiveProps中触发
+ * 需要确保目标内容被渲染
+ * 
+ * 例：
+ * import classAddModal from 'Utils/classAddModal'
+ * 
+ * componentWillReceiveProps(nextProps) {
+ *   if (nextProps.result) {
+ *     setTimeout(() => {
+ *       const modalClass = new classAddModal()
+ *
+ *       modalClass.findNode('modal-class-pop')
+ *     }, 0);
+ *   }
+ * } 
  */
+
 export class classAddModal {
   constructor() {
     this.elms = {}
@@ -50,6 +67,7 @@ export class classAddModal {
       background-color: rgba(0,0,0,.4);
       z-index: 999;
       text-align: center;
+      transition: all .5s ease-in;
     `)
     wrap.addEventListener('click', self.hideElement.bind(self, wrap))
 
