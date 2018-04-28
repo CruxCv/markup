@@ -17,6 +17,9 @@
  *     }, 0);
  *   }
  * } 
+ * 
+ * @findNode params
+ * className: string
  */
 
 export class classAddModal {
@@ -26,29 +29,18 @@ export class classAddModal {
 
   findNode(className) {
     this.className = className
-
     const selectors = document.querySelectorAll(`img.${className}`)
     
     selectors.forEach((elm, index) => {
       // 存下elm
-      // 便于减少后续重复生成modal
       elm.style.cursor = 'pointer'
-      this.elms[index] = {
-        elm
-      }
+      this.elms[index] = { elm }
 
       elm.addEventListener('click', this.createModal.bind(this, index))
     })
   }
 
   createModal(index) {
-    if (this.elms[index] && this.elms[index]['className']) {
-      const target = document.querySelector(`.${this.elms[index]['className']}`)
-      this.showElement(target)
-
-      return
-    }
-
     const src = this.elms[index]['elm'].getAttribute('src')
     let wrap = document.createElement('div')
     let modal = document.createElement('div')
@@ -57,17 +49,16 @@ export class classAddModal {
 
     const self = this
     // 兼容webkit
-    wrap.setAttribute('class', `img-modal-${index}`)
     wrap.setAttribute('style', `
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: rgba(0,0,0,.4);
+      background-color: rgba(0,0,0,.5);
       z-index: 999;
       text-align: center;
-      transition: all .5s ease-in;
+      cursor: pointer;
     `)
     wrap.addEventListener('click', self.hideElement.bind(self, wrap))
 
@@ -76,13 +67,20 @@ export class classAddModal {
       display: inline-block;
       max-width: 800px;
       margin-top: 100px;
+      min-width: 600px;
+      width: 45%;
     `)
+    modal.addEventListener('click', e => {
+      e.preventDefault()
+      e.stopPropagation()
+    })
 
     img.setAttribute('src', src)
 
     img.setAttribute('style', `
       width: 100%;
       border-radius: 5px;
+      cursor: auto;
     `)
 
     cancel.innerHTML = '+'
@@ -103,16 +101,10 @@ export class classAddModal {
     wrap.appendChild(modal)
 
     document.body.appendChild(wrap)
-
-    this.elms[index]['className'] = `img-modal-${index}`
   }
 
   hideElement(elm) {
-    elm.style.display = 'none'
-  }
-
-  showElement(elm) {
-    elm.style.display = 'block'
+    elm.remove()
   }
 }
 
