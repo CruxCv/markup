@@ -1,2 +1,31 @@
 # markup
 经常用到的一些工具函数
+
+## 导航
+  * [component](https://github.com/CrazyVirusss/markup/tree/master/component-common)
+    * [svg+css波浪](https://github.com/CrazyVirusss/markup/tree/master/component-common/wave)
+    * [无依赖图片预览](https://github.com/CrazyVirusss/markup/blob/master/component-common/modal.js)
+  * tools
+    * [汉字转拼音](https://github.com/CrazyVirusss/markup/tree/master/convert-pinyin)
+  * [css_feat](https://github.com/CrazyVirusss/markup/tree/master/css_feat)
+    * [brower](https://github.com/CrazyVirusss/markup/blob/master/css_feat/brower_scroll.md)
+    * [default](https://github.com/CrazyVirusss/markup/blob/master/css_feat/default_style.md)
+  * [html_feat](https://github.com/CrazyVirusss/markup/tree/master/html_feat)
+  * [一些常用的工具函数](https://github.com/CrazyVirusss/markup/tree/master/utils)
+    * [url参数转对象](https://github.com/CrazyVirusss/markup/tree/master/utils#url%E5%8F%82%E6%95%B0%E8%BD%AC%E5%AF%B9%E8%B1%A1)
+    * [判断是否为URL地址](https://github.com/CrazyVirusss/markup/tree/master/utils#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BAurl%E5%9C%B0%E5%9D%80)
+    * [判断是否为手机号](https://github.com/CrazyVirusss/markup/tree/master/utils#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E5%8F%B7)
+    * [获取操作系统类型](https://github.com/CrazyVirusss/markup/tree/master/utils#%E8%8E%B7%E5%8F%96%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9E%8B)
+    * [判断obj是否为空](https://github.com/CrazyVirusss/markup/tree/master/utils#%E5%88%A4%E6%96%ADobj%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA)
+    * [生成指定范围随机数](https://github.com/CrazyVirusss/markup/tree/master/utils#%E7%94%9F%E6%88%90%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E9%9A%8F%E6%9C%BA%E6%95%B0)
+    * [获取浏览器类型和版本](https://github.com/CrazyVirusss/markup/tree/master/utils#%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%89%88%E6%9C%AC)
+    * [根据name读取cookie](https://github.com/CrazyVirusss/markup/tree/master/utils#%E6%A0%B9%E6%8D%AEname%E8%AF%BB%E5%8F%96cookie)
+    * [设置Cookie](https://github.com/CrazyVirusss/markup/tree/master/utils#%E8%AE%BE%E7%BD%AEcookie)
+    * [函数节流](https://github.com/CrazyVirusss/markup/tree/master/utils#%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81)
+    * [函数防抖](https://github.com/CrazyVirusss/markup/tree/master/utils#%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96)
+    * [格式化${startTime}距现在的已过时间](https://github.com/CrazyVirusss/markup/tree/master/utils#%E6%A0%BC%E5%BC%8F%E5%8C%96starttime%E8%B7%9D%E7%8E%B0%E5%9C%A8%E7%9A%84%E5%B7%B2%E8%BF%87%E6%97%B6%E9%97%B4)
+    * [从url获取params](https://github.com/CrazyVirusss/markup/tree/master/utils#%E4%BB%8Eurl%E8%8E%B7%E5%8F%96params)
+    * [base64](https://github.com/CrazyVirusss/markup/tree/master/utils#base64)
+    * [滚动到顶部](https://github.com/CrazyVirusss/markup/tree/master/utils#%E6%BB%9A%E5%8A%A8%E5%88%B0%E9%A1%B6%E9%83%A8)
+    * [URL参数](https://github.com/CrazyVirusss/markup/tree/master/utils#url%E5%8F%82%E6%95%B0)
+    * [生成指定范围数字数组](https://github.com/CrazyVirusss/markup/tree/master/utils#%E7%94%9F%E6%88%90%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E6%95%B0%E5%AD%97%E6%95%B0%E7%BB%84)
