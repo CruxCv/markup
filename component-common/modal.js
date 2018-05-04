@@ -2,8 +2,8 @@
  * 无依赖图片预览
  * 
  * Usage
- * 需要在componentWillReceiveProps中触发
- * 需要确保目标内容被渲染
+ * 可以在componentWillReceiveProps中触发
+ * 确保目标内容被渲染
  * 
  * 例：
  * import classAddModal from 'Utils/classAddModal'
