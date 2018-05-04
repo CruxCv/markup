@@ -6,14 +6,14 @@
  * 确保目标内容被渲染
  * 
  * 例：
- * import classAddModal from 'Utils/classAddModal'
+ * import EasyPicturePreview from './EasyPicturePreview'
  * 
  * componentWillReceiveProps(nextProps) {
  *   if (nextProps.result) {
  *     setTimeout(() => {
- *       const modalClass = new classAddModal()
+ *       const epp = new EasyPicturePreview()
  *
- *       modalClass.findNode('modal-class-pop')
+ *       epp.findNode('modal-class-pop')
  *     }, 0);
  *   }
  * } 
@@ -22,7 +22,7 @@
  * className: string
  */
 
-export class classAddModal {
+export class EasyPicturePreview {
   constructor() {
     this.elms = {}
   }
@@ -32,7 +32,7 @@ export class classAddModal {
     const selectors = document.querySelectorAll(`img.${className}`)
     
     selectors.forEach((elm, index) => {
-      // 存下elm
+      // 
       elm.style.cursor = 'pointer'
       this.elms[index] = { elm }
 
@@ -49,6 +49,8 @@ export class classAddModal {
 
     const self = this
     // 兼容webkit
+    // 此处做一下兼容
+    // 可能不会经过预处理
     wrap.setAttribute('style', `
       position: fixed;
       top: 0;
