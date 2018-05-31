@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./SelfAudio.less";
+import "./SelfAudio.scss";
 
 export class SelfAudio extends React.Component {
   constructor(props) {
@@ -27,9 +27,18 @@ export class SelfAudio extends React.Component {
   }
 
   readyToPlay() {
-    const { duration: allTime } = this.audio;
+    const { autoPlay } = this.props;
+    const audio = this.audio;
+    const { duration: allTime } = audio;
 
-    this.setState({ allTime });
+    if (allTime !== 0) {
+      this.setState({ allTime });
+      // 是否自动播放
+      if (autoPlay) {
+        audio.play();
+        this.setState({ isPlay: !!autoPlay });
+      }
+    }
   }
 
   getCurrentPlayTime() {
@@ -40,7 +49,7 @@ export class SelfAudio extends React.Component {
 
   /**
    * format time
-   * @param {time} time 
+   * @param {time} time
    */
   millisecondToDate(time) {
     const second = Math.floor(time % 60);
@@ -51,11 +60,13 @@ export class SelfAudio extends React.Component {
 
   // distance
   handleTouchStart(e) {
-    const audio = this.audio;
+    const { frozen = false } = this.props;
     const { isPlay } = this.state;
     const { pageX: begin } = e.touches[0];
+    // 是否禁用滑动
+    if (frozen) return;
     // 先让播放器暂停
-    if (isPlay) audio.pause();
+    if (isPlay) this.audio.pause();
     // 存入滑动状态
     this.setState({ begin });
   }
@@ -89,6 +100,7 @@ export class SelfAudio extends React.Component {
   handleTouchEnd(e) {
     const audio = this.audio;
     const { isPlay } = this.state;
+    console.log(isPlay);
 
     if (isPlay) audio.play();
 
@@ -96,6 +108,10 @@ export class SelfAudio extends React.Component {
   }
 
   jumpToVoice(e) {
+    const { jump = true } = this.props;
+    // 是否跳转
+    if (!jump) return;
+
     const { allTime } = this.state;
     const { pageX, target } = e.touches[0];
     const { width, left } = this.maxRangeEl.getBoundingClientRect();
@@ -169,7 +185,7 @@ SelfAudio.propTypes = {
   name: PropTypes.string,
   jump: PropTypes.bool,
   frozen: PropTypes.bool,
-  autoPlay: PropTypes.bool,
+  autoPlay: PropTypes.bool
 };
 
 export default SelfAudio;
