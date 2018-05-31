@@ -17,11 +17,7 @@ export class SelfAudio extends React.Component {
   audioStatusChange() {
     const { isPlay } = this.state;
 
-    if (isPlay) {
-      this.audio.pause();
-    } else {
-      this.audio.play();
-    }
+    this.audio[isPlay ? "pause" : "play"]();
 
     this.setState({ isPlay: !isPlay });
   }
