@@ -121,7 +121,7 @@ export class SelfAudio extends React.Component {
   render() {
     const {
       source = "http://65.ierge.cn/13/206/412922.mp3",
-      poster = "https://kypublic.oss-cn-shanghai.aliyuncs.com/2018/04/20/47/15242171412329EPilu.jpeg",
+      poster = "",
       name = "测试音频"
     } = this.props;
     const { currentTime, allTime, isPlay } = this.state;
