@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./SelfAudio.scss";
+import "./SelfAudio.less";
 
 export class SelfAudio extends React.Component {
   constructor(props) {
