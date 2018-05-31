@@ -166,7 +166,10 @@ export class SelfAudio extends React.Component {
 SelfAudio.propTypes = {
   source: PropTypes.string,
   poster: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
+  jump: PropTypes.bool,
+  frozen: PropTypes.bool,
+  autoPlay: PropTypes.bool,
 };
 
 export default SelfAudio;
