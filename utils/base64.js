@@ -128,7 +128,10 @@ var Base64 = {
     } // Whend
 
     return string
-  } // End Function _utf8_decode
+  }, // End Function _utf8_decode
+  safeEncode(str) {
+    return this.encode(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+  }
 }
 
 
